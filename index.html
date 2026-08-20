@@ -1077,7 +1077,7 @@ footer ul a:hover{color:#fff;}
 
       <div class="contact-card">
         <h3>お問い合わせフォーム</h3>
-        <form id="contactForm" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" onsubmit="return handleSubmit(event)">
+        <form id="contactForm" name="contact" method="POST" action="/?contact=success" data-netlify="true" data-netlify-honeypot="bot-field">
           <input type="hidden" name="form-name" value="contact">
           <p style="display:none;"><label>他の項目は入力しないでください: <input name="bot-field" /></label></p>
           <div class="field">
@@ -1235,25 +1235,25 @@ function toggleFaq(btn){
   }
 }
 
-function handleSubmit(e){
-  e.preventDefault();
-  var form = e.target;
-  var data = new FormData(form);
-  fetch("/", {
-    method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: new URLSearchParams(data).toString()
-  }).then(function(){
-    document.getElementById('submitMsg').style.display = 'block';
-    form.reset();
-  }).catch(function(){
-    alert('送信に失敗しました。恐れ入りますが、お電話(06-6224-3252)またはメール(you.midoribashi1212@gmail.com)にて直接ご連絡ください。');
-  });
-  return false;
-}
-
 // set initial active nav
 document.querySelector('.main-nav a[data-page="page-top"]').classList.add('active');
+
+// After a successful Netlify Forms submission, the browser is redirected back here
+// with ?contact=success — show the inline thank-you message on the contact page.
+(function(){
+  var params = new URLSearchParams(window.location.search);
+  if (params.get('contact') === 'success') {
+    goTo('page-contact');
+    var msg = document.getElementById('submitMsg');
+    if (msg) {
+      msg.style.display = 'block';
+      msg.scrollIntoView({behavior:'smooth', block:'center'});
+    }
+    // clean the URL so a refresh doesn't re-trigger the message
+    var cleanUrl = window.location.pathname + window.location.hash;
+    window.history.replaceState({}, document.title, cleanUrl);
+  }
+})();
 </script>
 
 </body>
