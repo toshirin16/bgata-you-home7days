@@ -23,10 +23,12 @@ function toggleFaq(btn){
   document.querySelectorAll('.faq-item.open').forEach(el => {
     el.classList.remove('open');
     el.querySelector('.faq-a').style.maxHeight = null;
+    el.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
   });
   if(!isOpen){
     item.classList.add('open');
     ans.style.maxHeight = ans.scrollHeight + 'px';
+    btn.setAttribute('aria-expanded', 'true');
   }
 }
 
