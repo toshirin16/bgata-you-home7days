@@ -27,7 +27,7 @@
 <!-- ============ HEADER ============ -->
 <header class="site-header">
   <div class="header-inner">
-    <a href="#top" class="logo" onclick="goTo('page-top')">
+    <a href="#page-top" class="logo" onclick="goTo('page-top'); return false">
       <img class="leaf-img" src="assets/img/logo-you.webp" width="534" height="460" alt="ユー ロゴ">
       <span>ユー<span class="sub">就労継続支援B型事業所<br>大阪市東成区</span></span>
     </a>
@@ -35,20 +35,21 @@
       <span></span><span></span><span></span>
     </button>
     <nav class="main-nav" id="mainNav">
-      <a href="#top" data-page="page-top" onclick="goTo('page-top')">トップページ</a>
-      <a href="#about" data-page="page-about" onclick="goTo('page-about')">事業紹介</a>
-      <a href="#guide" data-page="page-guide" onclick="goTo('page-guide')">利用案内</a>
-      <a href="#products" data-page="page-products" onclick="goTo('page-products')">作品紹介</a>
-      <a href="#access" data-page="page-access" onclick="goTo('page-access')">アクセスはこちら</a>
-      <a href="#recruit" data-page="page-recruit" onclick="goTo('page-recruit')">採用情報</a>
-      <a href="#contact" data-page="page-contact" onclick="goTo('page-contact')">まずはご質問・相談</a>
-      <a href="#contact" class="nav-cta" onclick="goTo('page-contact')">見学に来たい方はこちら</a>
+      <a href="#page-top" data-page="page-top" onclick="goTo('page-top'); return false">トップページ</a>
+      <a href="#page-about" data-page="page-about" onclick="goTo('page-about'); return false">事業紹介</a>
+      <a href="#page-guide" data-page="page-guide" onclick="goTo('page-guide'); return false">利用案内</a>
+      <a href="#page-products" data-page="page-products" onclick="goTo('page-products'); return false">作品紹介</a>
+      <a href="#page-access" data-page="page-access" onclick="goTo('page-access'); return false">アクセスはこちら</a>
+      <a href="#page-recruit" data-page="page-recruit" onclick="goTo('page-recruit'); return false">採用情報</a>
+      <a href="#page-contact" data-page="page-contact" onclick="goTo('page-contact'); return false">まずはご質問・相談</a>
+      <a href="#page-contact" class="nav-cta" onclick="goTo('page-contact'); return false">見学に来たい方はこちら</a>
     </nav>
   </div>
 </header>
 
 <!-- JavaScript 無効時のみ表示される最低限の事業所情報（値は本ページ内の正式情報から取得） -->
 <noscript>
+  <style>.page{display:block}</style>
   <div style="max-width:720px; margin:24px auto; padding:20px 24px; border:1px solid #E3DFD2; border-radius:12px; background:#F8F4EA; font-family:'Noto Sans JP',sans-serif; line-height:1.9; color:#2B2B26;">
     <p style="font-weight:700; color:#227558; margin:0 0 8px;">JavaScript が無効になっています</p>
     <p style="margin:0 0 12px;">事業紹介・利用案内・アクセス・採用情報・お問い合わせフォームなどの各ページは、JavaScript を有効にするとご覧いただけます。お急ぎの場合は下記までご連絡ください。</p>
@@ -76,8 +77,8 @@
         <p class="sub-copy">今日も出来た!を増やしていく。</p>
         <p class="desc">働くことへの不安や悩みに寄り添いながら、一人ひとりが自分のペースで過ごし、できることを少しずつ増やしていける場所です。まずは見学だけでも、お気軽にどうぞ。</p>
         <div class="btn-row">
-          <a href="#contact" class="btn btn-primary" onclick="goTo('page-contact')">見学・相談を申し込む</a>
-          <a href="#about" class="btn btn-outline" onclick="goTo('page-about')">事業所紹介を見る</a>
+          <a href="#page-contact" class="btn btn-primary" onclick="goTo('page-contact'); return false">見学・相談を申し込む</a>
+          <a href="#page-about" class="btn btn-outline" onclick="goTo('page-about'); return false">事業所紹介を見る</a>
         </div>
       </div>
       <div class="hero-photo">
@@ -169,7 +170,7 @@
         <div class="photo photo-real"><img src="assets/img/product-knit-pouch-flower.jpg" width="750" height="1000" loading="lazy" alt="利用者が作った編み物のポーチとお花のモチーフ"></div>
       </div>
       <div class="center-text mt-64">
-        <a href="#products" class="btn btn-outline" onclick="goTo('page-products')">作品紹介ページを見る</a>
+        <a href="#page-products" class="btn btn-outline" onclick="goTo('page-products'); return false">作品紹介ページを見る</a>
       </div>
     </div>
   </section>
@@ -218,7 +219,7 @@
         <div class="step-box"><span class="step-no">05</span><h4>ステップアップ</h4><p>できることを増やしながら、その先の目標に向かって一緒に進みます。</p></div>
       </div>
       <div class="center-text mt-64">
-        <a href="#guide" class="btn btn-outline" onclick="goTo('page-guide')">利用案内ページで詳しく見る</a>
+        <a href="#page-guide" class="btn btn-outline" onclick="goTo('page-guide'); return false">利用案内ページで詳しく見る</a>
       </div>
     </div>
   </section>
@@ -226,7 +227,7 @@
   <!-- 見学バナー -->
   <section class="page-section" style="padding-top:0;">
     <div class="container">
-      <a href="#contact" class="photo-banner" onclick="goTo('page-contact')" style="cursor:pointer; text-decoration:none;">
+      <a href="#page-contact" class="photo-banner" onclick="goTo('page-contact'); return false" style="cursor:pointer; text-decoration:none;">
         <img src="assets/img/scenery-swallow-riverside.webp" width="828" height="327" loading="lazy" alt="燕が飛ぶ春の川辺と花畑">
         <div class="photo-banner-content">
           <p class="eyebrow">WELCOME</p>
@@ -249,7 +250,7 @@
           </ul>
           <p style="color:#F2F7F4; font-weight:600; margin-bottom:28px;">そんなご相談、大歓迎です。見学・相談はお気軽にどうぞ。</p>
           <div class="btn-row">
-            <a href="#contact" class="btn btn-primary" onclick="goTo('page-contact')">見学・相談はこちら</a>
+            <a href="#page-contact" class="btn btn-primary" onclick="goTo('page-contact'); return false">見学・相談はこちら</a>
           </div>
           <div class="cta-tel">
             <strong>06-6224-3252</strong>
@@ -375,7 +376,7 @@
       <div class="cta-band">
         <h2>事業所の雰囲気を、実際にご覧ください</h2>
         <p>見学はいつでも歓迎です。まずはお気軽にご相談ください。</p>
-        <a href="#contact" class="btn btn-outline" onclick="goTo('page-contact')">見学・相談を申し込む</a>
+        <a href="#page-contact" class="btn btn-outline" onclick="goTo('page-contact'); return false">見学・相談を申し込む</a>
       </div>
     </div>
   </section>
@@ -510,7 +511,7 @@
       <div class="cta-band" style="background:var(--white); box-shadow:var(--shadow);">
         <h2 style="color:var(--green-deep2);">迷ったら、まずはお電話ください</h2>
         <p style="color:var(--text-soft);">ご本人・ご家族・関係機関の方、どなたからでもお気軽にご連絡いただけます。</p>
-        <a href="#contact" class="btn btn-primary" onclick="goTo('page-contact')">お問い合わせページへ</a>
+        <a href="#page-contact" class="btn btn-primary" onclick="goTo('page-contact'); return false">お問い合わせページへ</a>
       </div>
     </div>
   </section>
@@ -583,7 +584,7 @@
       <div class="cta-band">
         <h2>作品のご購入・作業のご依頼について</h2>
         <p>販売場所や価格、受託作業のご相談は、お問い合わせページよりご連絡ください。</p>
-        <a href="#contact" class="btn btn-outline" onclick="goTo('page-contact')">お問い合わせページへ</a>
+        <a href="#page-contact" class="btn btn-outline" onclick="goTo('page-contact'); return false">お問い合わせページへ</a>
       </div>
     </div>
   </section>
@@ -630,7 +631,7 @@
             <div><strong>受付時間</strong><span>9:30〜17:00(土日・祝日、お盆、GW休み)</span></div>
           </div>
           <p class="form-note" style="margin-top:20px; padding-top:20px; border-top:1px dashed var(--line);">駐車場の有無や詳しい道順について気になる方は、お電話またはお問い合わせフォームからお気軽にお尋ねください。</p>
-          <a href="#contact" class="btn btn-primary" style="margin-top:24px;" onclick="goTo('page-contact')">見学・相談を申し込む</a>
+          <a href="#page-contact" class="btn btn-primary" style="margin-top:24px;" onclick="goTo('page-contact'); return false">見学・相談を申し込む</a>
         </div>
         <div class="photo tall photo-real" style="min-height:420px;">
           <img src="assets/img/access-route-map.jpg" width="1000" height="1011" loading="lazy" alt="大阪メトロ緑橋駅5号出口からユーまでの道順地図。中央大通りを南下し、今里筋沿いに徒歩5分。CITY of LIVERPOOL 1階。" style="object-fit:contain; background:#fff;">
@@ -800,13 +801,13 @@
       <div>
         <h5>ページ一覧</h5>
         <ul>
-          <li><a href="#top" onclick="goTo('page-top')">トップページ</a></li>
-          <li><a href="#about" onclick="goTo('page-about')">事業紹介</a></li>
-          <li><a href="#guide" onclick="goTo('page-guide')">利用案内</a></li>
-          <li><a href="#products" onclick="goTo('page-products')">作品紹介</a></li>
-          <li><a href="#access" onclick="goTo('page-access')">アクセスはこちら</a></li>
-          <li><a href="#recruit" onclick="goTo('page-recruit')">採用情報</a></li>
-          <li><a href="#contact" onclick="goTo('page-contact')">まずはご質問・相談</a></li>
+          <li><a href="#page-top" onclick="goTo('page-top'); return false">トップページ</a></li>
+          <li><a href="#page-about" onclick="goTo('page-about'); return false">事業紹介</a></li>
+          <li><a href="#page-guide" onclick="goTo('page-guide'); return false">利用案内</a></li>
+          <li><a href="#page-products" onclick="goTo('page-products'); return false">作品紹介</a></li>
+          <li><a href="#page-access" onclick="goTo('page-access'); return false">アクセスはこちら</a></li>
+          <li><a href="#page-recruit" onclick="goTo('page-recruit'); return false">採用情報</a></li>
+          <li><a href="#page-contact" onclick="goTo('page-contact'); return false">まずはご質問・相談</a></li>
         </ul>
       </div>
       <div>
