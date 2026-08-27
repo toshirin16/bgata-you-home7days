@@ -41,6 +41,17 @@ h1,h2,h3,h4{font-family:var(--serif-jp); color:var(--green-deep2); font-weight:7
 button{font-family:inherit; cursor:pointer;}
 :focus-visible{outline:3px solid var(--orange); outline-offset:3px;}
 
+/* skip link — off-screen until keyboard focus */
+.skip-link{
+  position:fixed; left:16px; top:-64px; z-index:300;
+  background:var(--white); color:var(--green-deep2);
+  font-family:var(--serif-jp); font-weight:700; font-size:0.9rem;
+  padding:12px 20px; border-radius:0 0 12px 12px;
+  box-shadow:var(--shadow); text-decoration:none;
+  transition:top .2s ease;
+}
+.skip-link:focus{top:0;}
+
 .container{max-width:1120px; margin:0 auto; padding:0 24px;}
 @media (max-width:640px){ .container{padding:0 20px;} }
 
