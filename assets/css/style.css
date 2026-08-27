@@ -79,16 +79,25 @@ nav.main-nav a.active{background:var(--green-deep); color:#fff;}
   border-radius:999px; font-weight:700 !important; white-space:nowrap; flex-shrink:0;
 }
 .nav-cta:hover{background:#cf7a30 !important;}
-.hamburger{display:none; flex-direction:column; gap:5px; background:none; border:none; padding:8px;}
+.hamburger{display:none; flex-direction:column; align-items:center; justify-content:center; gap:5px; background:none; border:none; padding:8px; min-width:44px; min-height:44px;}
 .hamburger span{width:24px; height:2px; background:var(--green-deep2); display:block; border-radius:2px;}
 @media (max-width:880px){
+  /* the closed off-canvas menu sits at translateX(100%); clip page-level x-overflow so it
+     does not create a phantom horizontal scrollbar. clip (not hidden) keeps the sticky header working. */
+  html{overflow-x:clip;}
   nav.main-nav{
     position:fixed; top:64px; left:0; right:0; bottom:0;
     background:var(--bg); flex-direction:column; align-items:stretch; gap:0;
-    padding:12px 24px; transform:translateX(100%); transition:transform .3s ease;
+    padding:12px 24px; transform:translateX(100%);
+    visibility:hidden; pointer-events:none;
+    transition:transform .3s ease, visibility 0s linear .3s;
     overflow-y:auto;
   }
-  nav.main-nav.open{transform:translateX(0);}
+  nav.main-nav.open{
+    transform:translateX(0);
+    visibility:visible; pointer-events:auto;
+    transition:transform .3s ease, visibility 0s linear 0s;
+  }
   nav.main-nav a{padding:16px 8px; border-bottom:1px solid var(--line); border-radius:0; font-size:1.05rem;}
   .nav-cta{margin:16px 0 0 0 !important; text-align:center; border-radius:12px;}
   .hamburger{display:flex;}
