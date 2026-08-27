@@ -1,0 +1,16 @@
+# --- OS / エディタが作る不要ファイル ---
+desktop.ini
+.DS_Store
+Thumbs.db
+ehthumbs.db
+*~
+
+# --- エディタ設定 ---
+.vscode/
+.idea/
+
+# --- 一時作業用（画像抽出など一度きりのスクリプトで使用）---
+node_modules/
+npm-debug.log*
+.cache/
+tmp/
