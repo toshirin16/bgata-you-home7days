@@ -13,15 +13,17 @@
 
 ## ディレクトリ構成
 
-現状（P1で整理予定）:
+現状:
 
 ```
-index.html                        # 正本
-index_1.html / _2 / _4 / _5.html  # 旧複製 → P1で削除
-ogp.jpg                           # OGP画像（使用中）
+index.html                     # 正本
+ogp.jpg                        # OGP画像（使用中）
 sitemap.xml
-20260822_121037.jpg / event-*     # 未使用メディア → P1で削除
-files.zip                         # 未使用 → P1で削除
+event-video.mp4                # 将来の動画セクション用（未使用・保持）
+event-video-poster.jpg         # 同上（動画ポスター）
+event-photo-1.jpg / -2.jpg     # 同上（出店写真）
+event-video-snippet.html       # 動画セクションの実装用スニペット（未組込）
+.gitignore / README.md / CLAUDE.md
 ```
 
 整理後の目標:
