@@ -21,8 +21,6 @@ ogp.jpg                        # OGP画像（使用中）
 sitemap.xml
 assets/video/event-video.mp4          # イベントセクションの動画（使用中）
 assets/video/event-video-poster.jpg   # 同上（ポスター画像）
-event-photo-1.jpg / -2.jpg     # 未使用（出店写真の別カット）
-event-video-snippet.html       # 旧・実装用スニペット（組込済みのため不要）
 .gitignore / README.md / CLAUDE.md
 ```
 
