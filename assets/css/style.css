@@ -14,6 +14,7 @@
   --pink-soft:#FAE5E1;
   --blue:#5B92B5;
   --blue-soft:#E3EDF3;
+  --header-bg:#235E82;
   --text:#2B2B26;
   --text-soft:#5A5A50;
   --white:#FFFFFF;
@@ -58,8 +59,8 @@ button{font-family:inherit; cursor:pointer;}
 /* ---------- Header ---------- */
 header.site-header{
   position:sticky; top:0; z-index:100;
-  background:var(--bg);
-  border-bottom:1px solid var(--line);
+  background:var(--header-bg);
+  border-bottom:1px solid rgba(255,255,255,0.14);
 }
 .header-inner{
   display:flex; align-items:center; justify-content:space-between; gap:12px;
@@ -67,37 +68,37 @@ header.site-header{
 }
 .logo{
   display:flex; align-items:center; gap:10px; flex-shrink:0; white-space:nowrap;
-  font-family:var(--serif-jp); font-weight:700; font-size:1.05rem; color:var(--green-deep2);
+  font-family:var(--serif-jp); font-weight:700; font-size:1.05rem; color:#fff;
 }
 .logo .leaf{width:30px; height:30px; flex-shrink:0;}
-.logo .leaf-img{width:38px; height:auto; flex-shrink:0;}
-.logo .sub{display:block; font-size:0.62rem; font-weight:400; color:var(--text-soft); letter-spacing:0.05em; white-space:nowrap;}
+.logo .leaf-img{width:38px; height:auto; flex-shrink:0; background:#fff; border-radius:50%; padding:3px;}
+.logo .sub{display:block; font-size:0.62rem; font-weight:400; color:rgba(255,255,255,0.82); letter-spacing:0.05em; white-space:nowrap;}
 nav.main-nav{
   display:flex; align-items:center; justify-content:flex-start; flex-wrap:nowrap; gap:2px;
   min-width:0; overflow-x:auto; overflow-y:hidden; scrollbar-width:none; -ms-overflow-style:none;
 }
 nav.main-nav::-webkit-scrollbar{display:none;}
 nav.main-nav a{
-  padding:9px 11px; font-size:0.82rem; font-weight:500; color:var(--text);
+  padding:9px 11px; font-size:0.82rem; font-weight:500; color:rgba(255,255,255,0.92);
   border-radius:999px; transition:background .2s, color .2s;
   position:relative; white-space:nowrap; flex-shrink:0;
 }
-nav.main-nav a:hover{background:var(--green-pale); color:var(--green-deep2);}
-nav.main-nav a.active{background:var(--green-deep); color:#fff;}
+nav.main-nav a:hover{background:rgba(255,255,255,0.16); color:#fff;}
+nav.main-nav a.active{background:#fff; color:var(--header-bg);}
 .nav-cta{
   margin-left:8px; padding:9px 15px !important; background:var(--orange) !important; color:#fff !important;
   border-radius:999px; font-weight:700 !important; white-space:nowrap; flex-shrink:0;
 }
 .nav-cta:hover{background:#cf7a30 !important;}
 .hamburger{display:none; flex-direction:column; align-items:center; justify-content:center; gap:5px; background:none; border:none; padding:8px; min-width:44px; min-height:44px;}
-.hamburger span{width:24px; height:2px; background:var(--green-deep2); display:block; border-radius:2px;}
+.hamburger span{width:24px; height:2px; background:#fff; display:block; border-radius:2px;}
 @media (max-width:880px){
   /* the closed off-canvas menu sits at translateX(100%); clip page-level x-overflow so it
      does not create a phantom horizontal scrollbar. clip (not hidden) keeps the sticky header working. */
   html{overflow-x:clip;}
   nav.main-nav{
     position:fixed; top:64px; left:0; right:0; bottom:0;
-    background:var(--bg); flex-direction:column; align-items:stretch; gap:0;
+    background:var(--header-bg); flex-direction:column; align-items:stretch; gap:0;
     padding:12px 24px; transform:translateX(100%);
     visibility:hidden; pointer-events:none;
     transition:transform .3s ease, visibility 0s linear .3s;
@@ -108,7 +109,7 @@ nav.main-nav a.active{background:var(--green-deep); color:#fff;}
     visibility:visible; pointer-events:auto;
     transition:transform .3s ease, visibility 0s linear 0s;
   }
-  nav.main-nav a{padding:16px 8px; border-bottom:1px solid var(--line); border-radius:0; font-size:1.05rem;}
+  nav.main-nav a{padding:16px 8px; border-bottom:1px solid rgba(255,255,255,0.14); border-radius:0; font-size:1.05rem;}
   .nav-cta{margin:16px 0 0 0 !important; text-align:center; border-radius:12px;}
   .hamburger{display:flex;}
 }
