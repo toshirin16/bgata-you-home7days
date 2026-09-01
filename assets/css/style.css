@@ -58,8 +58,7 @@ button{font-family:inherit; cursor:pointer;}
 /* ---------- Header ---------- */
 header.site-header{
   position:sticky; top:0; z-index:100;
-  background:rgba(251,250,247,0.92);
-  backdrop-filter:blur(8px);
+  background:var(--bg);
   border-bottom:1px solid var(--line);
 }
 .header-inner{
