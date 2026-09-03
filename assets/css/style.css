@@ -445,4 +445,11 @@ footer ul a:hover{color:#fff;}
 }
 .recruit-badge:nth-child(2n){background:var(--orange-soft); color:#b5601f; border-color:var(--orange);}
 .recruit-badge:nth-child(3n){background:var(--pink-soft); color:#b5453a; border-color:var(--pink);}
-@media (prefers-reduced-motion: reduce){ *{transition:none !important; scroll-behavior:auto !important;} }
+
+/* ---------- マルシェ告知帯 CTA（イベント終了後は index.html の帯と一緒に削除可） ---------- */
+.marche-cta{ animation:marche-cta-pulse 2.4s ease-in-out infinite; }
+@keyframes marche-cta-pulse{
+  0%, 100%{ transform:scale(1); }
+  50%{ transform:scale(1.06); }
+}
+@media (prefers-reduced-motion: reduce){ *{transition:none !important; scroll-behavior:auto !important;} .marche-cta{animation:none !important;} }
