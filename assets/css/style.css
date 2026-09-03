@@ -437,6 +437,9 @@ footer ul a:hover{color:#fff;}
   box-shadow:0 14px 40px rgba(226,139,63,0.14); border:2px dashed var(--pink);
 }
 @media (max-width:640px){ .recruit-card{padding:32px 22px;} }
+/* マルシェのチラシ。スマホではカード余白に少し食い込ませて大きく見せる */
+.marche-flyer{ margin:24px auto 0; max-width:640px; }
+@media (max-width:640px){ .marche-flyer{ margin:24px -14px 0; max-width:calc(100% + 28px); } }
 .recruit-badges{display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-top:28px;}
 .recruit-badge{
   display:inline-flex; align-items:center; gap:6px; padding:9px 16px; border-radius:999px;
