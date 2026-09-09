@@ -1,7 +1,7 @@
 
 :root{
-  --bg:#FFFEFC;
-  --bg-soft:#FEFCF4;
+  --bg:#FEF4F5;
+  --bg-soft:#FBECEE;
   --bg-green-tint:#FAFDF7;
   --green-deep:#0DAE7C;
   --green-deep2:#17805C;
@@ -10,7 +10,7 @@
   --green-pale:#E7F7EF;
   --orange:#F0964A;
   --orange-soft:#F8E7D2;
-  --beige:#FFFCF2;
+  --beige:#FCEEEF;
   --pink:#E5A39B;
   --pink-soft:#FAE5E1;
   --blue:#5B92B5;
@@ -30,7 +30,14 @@ html{scroll-behavior:smooth;}
 body{
   font-family:var(--sans-jp);
   color:var(--text);
-  background:var(--bg);
+  /* ほんのりピンクの地に、少し濃いピンクの〇を散らした背景（スクロールで固定） */
+  background-color:var(--bg);
+  background-image:
+    radial-gradient(circle, rgba(214,132,146,0.20) 0 5px, transparent 6px),
+    radial-gradient(circle, rgba(214,132,146,0.13) 0 3px, transparent 4px);
+  background-size:232px 232px, 158px 158px;
+  background-position:26px 40px, 150px 128px;
+  background-attachment:fixed;
   line-height:1.85;
   -webkit-font-smoothing:antialiased;
   font-weight:400;
@@ -131,9 +138,10 @@ nav.main-nav a.active{background:#fff; color:var(--header-bg);}
 /* ---------- Section basics ---------- */
 .page-section{padding:96px 0;}
 @media (max-width:640px){.page-section{padding:64px 0;}}
-.section-soft{background:var(--bg-soft);}
-.section-green{background:var(--bg-green-tint);}
-.section-beige{background:var(--beige);}
+/* セクション帯は透明にして、body のドット付きピンク地を全面に見せる */
+.section-soft{background:transparent;}
+.section-green{background:transparent;}
+.section-beige{background:transparent;}
 .eyebrow{
   display:inline-flex; align-items:center; gap:8px; font-size:0.82rem; font-weight:700;
   color:var(--green-mid); letter-spacing:0.12em; margin-bottom:16px;
@@ -170,7 +178,7 @@ p.section-lead{color:var(--text-soft); font-size:1.02rem; max-width:640px; margi
   background:
     radial-gradient(circle at 82% 8%, rgba(226,139,63,0.10), transparent 40%),
     radial-gradient(circle at 10% 90%, rgba(92,120,100,0.12), transparent 45%),
-    var(--bg);
+    transparent;
   overflow:hidden;
 }
 .hero-grid{display:grid; grid-template-columns:1.05fr 0.95fr; gap:56px; align-items:center;}
@@ -330,7 +338,7 @@ p.section-lead{color:var(--text-soft); font-size:1.02rem; max-width:640px; margi
 
 /* ---------- Page header (sub pages) ---------- */
 .page-hero{
-  padding:64px 0 56px; background:var(--bg-soft); border-bottom:1px solid var(--line);
+  padding:64px 0 56px; background:transparent; border-bottom:1px solid var(--line);
 }
 .page-hero .eyebrow{margin-bottom:14px;}
 .page-hero h1{font-size:clamp(1.8rem,3.6vw,2.5rem); margin-bottom:14px;}
