@@ -1,7 +1,7 @@
 
 :root{
-  --bg:#FEF4F5;
-  --bg-soft:#FBECEE;
+  --bg:#FFF6F8;
+  --bg-soft:#FCEEF1;
   --bg-green-tint:#FAFDF7;
   --green-deep:#0DAE7C;
   --green-deep2:#17805C;
@@ -30,13 +30,14 @@ html{scroll-behavior:smooth;}
 body{
   font-family:var(--sans-jp);
   color:var(--text);
-  /* ほんのりピンクの地に、少し濃いピンクの〇を散らした背景（スクロールで固定） */
+  /* ほんのりピンクの地に、大小の水玉をまばらに散らした背景（スクロールで固定） */
   background-color:var(--bg);
   background-image:
-    radial-gradient(circle, rgba(214,132,146,0.20) 0 5px, transparent 6px),
-    radial-gradient(circle, rgba(214,132,146,0.13) 0 3px, transparent 4px);
-  background-size:232px 232px, 158px 158px;
-  background-position:26px 40px, 150px 128px;
+    radial-gradient(circle, rgba(216,134,148,0.15) 0 10px, transparent 11px),
+    radial-gradient(circle, rgba(216,134,148,0.14) 0 5px, transparent 6px),
+    radial-gradient(circle, rgba(216,134,148,0.12) 0 2.5px, transparent 3.5px);
+  background-size:360px 360px, 250px 250px, 180px 180px;
+  background-position:40px 30px, 190px 150px, 110px 240px;
   background-attachment:fixed;
   line-height:1.85;
   -webkit-font-smoothing:antialiased;
