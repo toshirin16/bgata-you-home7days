@@ -421,17 +421,17 @@ p.section-lead{color:var(--text-soft); font-size:1.02rem; max-width:640px; margi
 .submit-msg{display:none; background:var(--green-pale); color:var(--green-deep2); padding:14px 18px; border-radius:12px; font-size:0.88rem; margin-top:16px;}
 
 /* ---------- Footer ---------- */
-footer{background:var(--green-deep2); color:#DCE7DD; padding:64px 0 28px; margin-top:40px;}
+footer{background:#0A9158; color:#fff; padding:64px 0 28px; margin-top:40px;}
 .footer-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:40px; margin-bottom:48px;}
 @media (max-width:720px){ .footer-grid{grid-template-columns:1fr;} }
 .footer-logo{display:flex; align-items:center; gap:10px; font-family:var(--serif-jp); font-weight:700; color:#fff; font-size:1.05rem; margin-bottom:14px;}
 .footer-logo svg{width:26px; height:26px;}
-footer p{color:#A9BEAC; font-size:0.88rem; max-width:320px;}
+footer p{color:rgba(255,255,255,0.9); font-size:0.88rem; max-width:320px;}
 footer h5{color:#fff; font-family:var(--serif-jp); font-size:0.92rem; margin-bottom:16px;}
 footer ul li{margin-bottom:10px;}
-footer ul a{color:#A9BEAC; font-size:0.9rem; transition:color .2s;}
-footer ul a:hover{color:#fff;}
-.footer-bottom{border-top:1px solid rgba(255,255,255,0.12); padding-top:24px; text-align:center; font-size:0.78rem; color:#7E9482;}
+footer ul a{color:#fff; font-size:0.9rem; transition:opacity .2s;}
+footer ul a:hover{opacity:0.75; text-decoration:underline;}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.25); padding-top:24px; text-align:center; font-size:0.78rem; color:rgba(255,255,255,0.75);}
 
 /* ---------- Page visibility (SPA) ---------- */
 .page{display:none;}
