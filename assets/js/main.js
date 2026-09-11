@@ -51,3 +51,12 @@ document.querySelector('.main-nav a[data-page="page-top"]').classList.add('activ
     window.history.replaceState({}, document.title, cleanUrl);
   }
 })();
+
+// URLに #page-xxx が付いている場合(広告などからの直リンク)、該当ページを開いた状態で表示する
+(function(){
+  var hash = window.location.hash.replace('#', '');
+  var validPages = ['page-top','page-about','page-guide','page-products','page-events','page-access','page-recruit','page-contact'];
+  if (hash && validPages.indexOf(hash) !== -1) {
+    goTo(hash);
+  }
+})();
