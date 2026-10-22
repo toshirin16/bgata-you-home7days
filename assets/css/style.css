@@ -1,7 +1,7 @@
 
 :root{
-  --bg:#FFF6F8;
-  --bg-soft:#FCEEF1;
+  --bg:#FFF3F7;
+  --bg-soft:#FFE9F0;
   --bg-green-tint:#FAFDF7;
   --green-deep:#0DAE7C;
   --green-deep2:#17805C;
@@ -10,9 +10,9 @@
   --green-pale:#E7F7EF;
   --orange:#F0964A;
   --orange-soft:#F8E7D2;
-  --beige:#FCEEEF;
-  --pink:#E5A39B;
-  --pink-soft:#FAE5E1;
+  --beige:#FFEDF2;
+  --pink:#F28FAE;
+  --pink-soft:#FFE0EA;
   --blue:#5B92B5;
   --blue-soft:#E3EDF3;
   --header-bg:#235E82;
@@ -20,7 +20,7 @@
   --text-soft:#5A5A50;
   --white:#FFFFFF;
   --line:#E3DFD2;
-  --shadow: 0 8px 30px rgba(46,74,59,0.08);
+  --shadow: 0 8px 30px rgba(222,100,145,0.14);
   --radius: 20px;
   --serif-jp:'Zen Maru Gothic', sans-serif;
   --sans-jp:'Noto Sans JP', sans-serif;
@@ -33,9 +33,9 @@ body{
   /* ほんのりピンクの地に、大小の水玉をまばらに散らした背景（スクロールで固定） */
   background-color:var(--bg);
   background-image:
-    radial-gradient(circle, rgba(216,134,148,0.15) 0 10px, transparent 11px),
-    radial-gradient(circle, rgba(216,134,148,0.14) 0 5px, transparent 6px),
-    radial-gradient(circle, rgba(216,134,148,0.12) 0 2.5px, transparent 3.5px);
+    radial-gradient(circle, rgba(244,122,166,0.20) 0 10px, transparent 11px),
+    radial-gradient(circle, rgba(244,122,166,0.18) 0 5px, transparent 6px),
+    radial-gradient(circle, rgba(244,122,166,0.15) 0 2.5px, transparent 3.5px);
   background-size:360px 360px, 250px 250px, 180px 180px;
   background-position:40px 30px, 190px 150px, 110px 240px;
   background-attachment:fixed;
@@ -140,9 +140,9 @@ nav.main-nav a.active{background:#fff; color:var(--header-bg);}
 .page-section{padding:96px 0;}
 @media (max-width:640px){.page-section{padding:64px 0;}}
 /* セクション帯は透明にして、body のドット付きピンク地を全面に見せる */
-.section-soft{background:transparent;}
+.section-soft{background:rgba(255,205,224,0.30);}
 .section-green{background:transparent;}
-.section-beige{background:transparent;}
+.section-beige{background:rgba(255,222,234,0.45);}
 .eyebrow{
   display:inline-flex; align-items:center; gap:8px; font-size:0.82rem; font-weight:700;
   color:var(--green-mid); letter-spacing:0.12em; margin-bottom:16px;
@@ -178,7 +178,7 @@ p.section-lead{color:var(--text-soft); font-size:1.02rem; max-width:640px; margi
   position:relative; padding:64px 0 100px;
   background:
     radial-gradient(circle at 82% 8%, rgba(226,139,63,0.10), transparent 40%),
-    radial-gradient(circle at 10% 90%, rgba(92,120,100,0.12), transparent 45%),
+    radial-gradient(circle at 10% 90%, rgba(255,140,185,0.22), transparent 45%),
     transparent;
   overflow:hidden;
 }
@@ -444,7 +444,7 @@ footer ul a:hover{opacity:0.75; text-decoration:underline;}
 /* ---------- Recruit (pop style) ---------- */
 .recruit-card{
   background:var(--white); border-radius:28px; padding:44px 36px;
-  box-shadow:0 14px 40px rgba(226,139,63,0.14); border:2px dashed var(--pink);
+  box-shadow:0 14px 40px rgba(222,100,145,0.18); border:2px dashed var(--pink);
 }
 @media (max-width:640px){ .recruit-card{padding:32px 22px;} }
 .recruit-badges{display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-top:28px;}
@@ -454,6 +454,6 @@ footer ul a:hover{opacity:0.75; text-decoration:underline;}
   border:1px solid var(--green-mid);
 }
 .recruit-badge:nth-child(2n){background:var(--orange-soft); color:#b5601f; border-color:var(--orange);}
-.recruit-badge:nth-child(3n){background:var(--pink-soft); color:#b5453a; border-color:var(--pink);}
+.recruit-badge:nth-child(3n){background:var(--pink-soft); color:#B02A5B; border-color:var(--pink);}
 
 @media (prefers-reduced-motion: reduce){ *{transition:none !important; scroll-behavior:auto !important;} }
