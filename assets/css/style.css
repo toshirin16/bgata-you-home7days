@@ -73,27 +73,29 @@ header.site-header{
 }
 .header-inner{
   display:flex; align-items:center; justify-content:space-between; gap:12px;
-  padding:16px 24px; max-width:1120px; margin:0 auto;
+  padding:16px 24px; max-width:1280px; margin:0 auto;
 }
 .logo{
   display:flex; align-items:center; gap:10px; flex-shrink:0; white-space:nowrap;
-  font-family:var(--serif-jp); font-weight:700; font-size:1.05rem; color:#fff;
+  font-family:var(--serif-jp); font-weight:700; font-size:1.2rem; line-height:1.3; color:#fff;
+  text-shadow:0 1px 2px rgba(0,0,0,0.2);
 }
 .logo .leaf{width:30px; height:30px; flex-shrink:0;}
 .logo .leaf-img{width:38px; height:auto; flex-shrink:0; background:#fff; border-radius:50%; padding:3px;}
-.logo .sub{display:block; font-size:0.62rem; font-weight:400; color:rgba(255,255,255,0.82); letter-spacing:0.05em; white-space:nowrap;}
+.logo .sub{display:block; font-size:0.78rem; font-weight:500; color:#fff; letter-spacing:0.04em; line-height:1.4; white-space:nowrap;}
 nav.main-nav{
   display:flex; align-items:center; justify-content:flex-start; flex-wrap:nowrap; gap:2px;
   min-width:0; overflow-x:auto; overflow-y:hidden; scrollbar-width:none; -ms-overflow-style:none;
 }
 nav.main-nav::-webkit-scrollbar{display:none;}
 nav.main-nav a{
-  padding:9px 11px; font-size:0.82rem; font-weight:500; color:rgba(255,255,255,0.92);
+  padding:9px 10px; font-size:0.92rem; font-weight:700; color:#fff;
+  text-shadow:0 1px 2px rgba(0,0,0,0.18);
   border-radius:999px; transition:background .2s, color .2s;
   position:relative; white-space:nowrap; flex-shrink:0;
 }
 nav.main-nav a:hover{background:rgba(255,255,255,0.16); color:#fff;}
-nav.main-nav a.active{background:#fff; color:var(--header-bg);}
+nav.main-nav a.active{background:#fff; color:var(--header-bg); text-shadow:none;}
 .nav-cta{
   margin-left:8px; padding:9px 15px !important; background:var(--orange) !important; color:#fff !important;
   border-radius:999px; font-weight:700 !important; white-space:nowrap; flex-shrink:0;
@@ -107,7 +109,7 @@ nav.main-nav a.active{background:#fff; color:var(--header-bg);}
      breakpoint raised to 1100px so the 9-item nav uses the hamburger before it gets cramped. */
   html{overflow-x:clip;}
   nav.main-nav{
-    position:fixed; top:64px; left:0; right:0; bottom:0;
+    position:fixed; top:93px; left:0; right:0; bottom:0;
     background:var(--header-bg); flex-direction:column; align-items:stretch; gap:0;
     padding:12px 24px; transform:translateX(100%);
     visibility:hidden; pointer-events:none;
