@@ -1,7 +1,7 @@
 # 就労継続支援B型事業所「ユー」ホームページ
 
 大阪市東成区の就労継続支援B型事業所「ユー」の公式サイト。
-ビルド不要の静的サイトで、`index.html` 1ファイルで全ページ（7セクション）を構成しています。
+静的サイトです。正本 `src/site.html` から `node tools/build-pages.js` で各ページのHTML（8ページ）を生成し、生成済みのHTMLをそのまま公開しています。
 
 ## 公開とデプロイ
 
@@ -16,7 +16,10 @@
 現状:
 
 ```
-index.html                     # 正本
+src/site.html                  # 正本（全ページ入り。ここを編集する）
+tools/build-pages.js           # 正本からページを生成するスクリプト
+index.html / about.html / guide.html / products.html
+events.html / access.html / recruit.html / contact.html   # 生成されたページ（直接編集しない）
 ogp.jpg                        # OGP画像（使用中）
 sitemap.xml
 assets/video/event-video.mp4          # イベントセクションの動画（使用中）
@@ -43,20 +46,22 @@ assets/
 `file://` で直接開くとフォーム等が正しく確認できないため、簡易サーバ経由で開きます。
 
 ```bash
+node tools/build-pages.js
 npx serve .
 # 表示された http://localhost:3000 などをブラウザで開く
 ```
 
 確認項目:
 
-- ナビで7セクション（トップ / 事業紹介 / 利用案内 / 作品紹介 / アクセス / 採用情報 / お問い合わせ）を巡回
+- ナビで8ページ（トップ / 事業紹介 / 利用案内 / 作品紹介 / イベント情報 / アクセス / 採用情報 / お問い合わせ）を巡回
 - スマホ幅（375px前後）でレイアウト崩れ・横スクロールがないこと
 - お問い合わせフォームの表示
 - 開発者ツールの Console にエラーが出ていないこと
 
 ## 編集の基本方針
 
-- 正本は **`index.html` のみ**。内容違いの複製ファイルは作らない。
+- 正本は **`src/site.html` のみ**。編集したら `node tools/build-pages.js` を実行し、生成されたHTMLも一緒にコミットする。
+- 生成されたHTML（`index.html` など）は直接編集しない。内容違いの複製ファイルも作らない。
 - 画像は `assets/img/` に実ファイルで置き、`<img>` に `width` / `height` / `loading="lazy"` を付ける。
   HTML に base64（`data:image/...`）を貼り付けない。
 - お問い合わせは Netlify Forms。`<form>` の `data-netlify="true"` /
