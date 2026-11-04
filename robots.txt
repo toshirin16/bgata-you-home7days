@@ -1,3 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /src/
+Disallow: /tools/
 Sitemap: https://bgata-you-home7days.netlify.app/sitemap.xml

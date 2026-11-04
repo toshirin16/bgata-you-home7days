@@ -1,7 +1,17 @@
 
+// 各ページのURL(ページは tools/build-pages.js で src/site.html から生成)
+var PAGE_URLS = {
+  'page-top': '/', 'page-about': '/about.html', 'page-guide': '/guide.html',
+  'page-products': '/products.html', 'page-events': '/events.html',
+  'page-access': '/access.html', 'page-recruit': '/recruit.html', 'page-contact': '/contact.html'
+};
+
 function goTo(pageId){
+  var target = document.getElementById(pageId);
+  // このHTMLに無いページなら、そのページのURLへ移動する
+  if (!target) { if (PAGE_URLS[pageId]) window.location.href = PAGE_URLS[pageId]; return; }
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.getElementById(pageId).classList.add('active');
+  target.classList.add('active');
   document.querySelectorAll('.main-nav a[data-page]').forEach(a => {
     a.classList.toggle('active', a.dataset.page === pageId);
   });
@@ -32,14 +42,23 @@ function toggleFaq(btn){
   }
 }
 
-// set initial active nav
-document.querySelector('.main-nav a[data-page="page-top"]').classList.add('active');
+// 今表示しているページのメニューを強調する
+(function(){
+  var cur = document.querySelector('.page.active');
+  var link = cur && document.querySelector('.main-nav a[data-page="' + cur.id + '"]');
+  if (link) link.classList.add('active');
+})();
 
 // After a successful Netlify Forms submission, the browser is redirected back here
 // with ?contact=success — show the inline thank-you message on the contact page.
 (function(){
   var params = new URLSearchParams(window.location.search);
   if (params.get('contact') === 'success') {
+    // フォームの送信後は「/?contact=success」に戻ってくるので、お問い合わせページへ移す
+    if (!document.getElementById('page-contact')) {
+      window.location.replace(PAGE_URLS['page-contact'] + '?contact=success');
+      return;
+    }
     goTo('page-contact');
     var msg = document.getElementById('submitMsg');
     if (msg) {
@@ -52,11 +71,10 @@ document.querySelector('.main-nav a[data-page="page-top"]').classList.add('activ
   }
 })();
 
-// URLに #page-xxx が付いている場合(広告などからの直リンク)、該当ページを開いた状態で表示する
+// 以前のURL(#page-xxx 付き、広告やSNSからの直リンク)は、そのページへ移す
 (function(){
   var hash = window.location.hash.replace('#', '');
-  var validPages = ['page-top','page-about','page-guide','page-products','page-events','page-access','page-recruit','page-contact'];
-  if (hash && validPages.indexOf(hash) !== -1) {
-    goTo(hash);
-  }
+  if (!hash || !PAGE_URLS[hash]) return;
+  if (document.getElementById(hash)) goTo(hash);
+  else window.location.replace(PAGE_URLS[hash]);
 })();
